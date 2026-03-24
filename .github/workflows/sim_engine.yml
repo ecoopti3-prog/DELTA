@@ -1,0 +1,63 @@
+name: DELTA — SIM Engine
+
+on:
+  schedule:
+    - cron: '0 0 * * *'    # Daily at 00:00 UTC — after all RD cycles complete
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Run mode: auto | diamonds | demo'
+        required: false
+        default: 'auto'
+      limit:
+        description: 'Max ideas to simulate (default: 5)'
+        required: false
+        default: '5'
+
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    defaults:
+      run:
+        working-directory: sim_engine
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r ../requirements.txt
+
+      - name: Run SIM Engine
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        run: |
+          MODE="${{ github.event.inputs.mode }}"
+          LIMIT="${{ github.event.inputs.limit }}"
+          if [ -z "$MODE" ]; then MODE="auto"; fi
+          if [ -z "$LIMIT" ]; then LIMIT="5"; fi
+          echo "Running SIM Engine: mode=$MODE limit=$LIMIT"
+          if [ "$MODE" = "demo" ]; then
+            python main.py --demo
+          elif [ "$MODE" = "diamonds" ]; then
+            python main.py --diamonds --limit $LIMIT
+          else
+            python main.py --auto --limit $LIMIT
+          fi
+
+      - name: Commit simulation reports
+        if: always()
+        run: |
+          git config user.name  "delta-bot"
+          git config user.email "bot@delta"
+          git add reports/output/ || true
+          git diff --staged --quiet || git commit -m "Auto: SIM reports $(date -u +%Y-%m-%d)"
+          git push || true
