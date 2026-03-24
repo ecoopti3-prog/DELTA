@@ -1,0 +1,92 @@
+{
+  "_profile": "robotics",
+  "_description": "Industrial robotics, servo motors, wiring harness, mechanical fatigue",
+
+  "domains": [
+    "robotics_mechanical",
+    "actuators_motors",
+    "wiring_harness",
+    "thermal_management",
+    "power_delivery"
+  ],
+
+  "physics_constraints": {
+    "robotics_mechanical": ["Young modulus", "S-N fatigue curve", "dynamic friction", "yield strength", "Rainflow counting"],
+    "actuators_motors":    ["back-EMF", "torque ripple", "thermal derating", "bearing fatigue", "Weibull reliability"],
+    "wiring_harness":      ["Joule heating", "arc flash threshold", "insulation degradation", "contact resistance"],
+    "thermal_management":  ["Carnot limit", "heat flux", "junction temperature"],
+    "power_delivery":      ["IR drop", "electromigration", "PDN impedance"]
+  },
+
+  "seed_keywords": [
+    "robotic arm joint fatigue failure",
+    "gear wear vibration industrial robot",
+    "wiring harness thermal degradation robot",
+    "contact resistance connector overheating",
+    "Joule heating cable insulation degradation",
+    "arc flash wiring harness failure",
+    "motor torque ripple precision robot",
+    "bearing fatigue servo motor failure",
+    "back-EMF derating thermal motor",
+    "S-N fatigue curve mechanical actuator",
+    "Young modulus stress strain robot joint",
+    "vibration resonance robot arm",
+    "servo motor thermal derating high duty",
+    "industrial robot MTBF failure analysis",
+    "wiring harness connector fretting corrosion",
+    "robot joint lubrication starvation",
+    "harmonic drive fatigue life robot",
+    "encoder feedback failure robot arm",
+    "motor insulation class thermal limit",
+    "robot repeatability degradation wear"
+  ],
+
+  "seed_sources": {
+    "arxiv": 15,
+    "openalex": 15,
+    "google_patents": 12,
+    "job_postings": 10,
+    "opencompute": 3,
+    "github_issues": 8,
+    "huggingface_papers": 5,
+    "nasa_ntrs": 10,
+    "osti_doe": 8
+  },
+
+  "target_companies": [
+    "Boston Dynamics", "ABB Robotics", "KUKA", "Fanuc",
+    "Universal Robots", "Yaskawa", "Kawasaki Robotics",
+    "Siemens", "Rockwell Automation", "Honeywell",
+    "Tesla", "Amazon Robotics", "Symbotic"
+  ],
+
+  "intelligence_signals": [
+    "robotics reliability engineer",
+    "mechatronics failure analysis engineer",
+    "motor drive engineer",
+    "wiring harness reliability engineer",
+    "servo motor thermal engineer",
+    "robot joint fatigue engineer",
+    "predictive maintenance engineer robotics",
+    "actuator reliability engineer"
+  ],
+
+  "opportunity_filters": {
+    "require_software_angle": true,
+    "max_capex_for_solution_usd": 2000000,
+    "target_efficiency_gain_percent": 10,
+    "exclude_domains": ["chip_fabrication", "hbm_design", "photonics_hardware", "liquid_cooling"]
+  },
+
+  "arxiv_categories": ["cs.RO", "eess.SY", "cs.AR"],
+
+  "week_one_plan": {
+    "day_1": "actuators_motors",
+    "day_2": "robotics_mechanical",
+    "day_3": "wiring_harness",
+    "day_4": "thermal_management",
+    "day_5": "power_delivery",
+    "day_6": "cross_domain",
+    "day_7": "kill_round"
+  }
+}

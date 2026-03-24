@@ -1,0 +1,91 @@
+{
+  "_profile": "datacenter",
+  "_description": "Data center liquid cooling, fluid dynamics, power infrastructure",
+
+  "domains": [
+    "liquid_cooling",
+    "fluid_dynamics",
+    "thermal_management",
+    "power_delivery",
+    "hardware_utilization"
+  ],
+
+  "physics_constraints": {
+    "liquid_cooling":   ["boiling point elevation", "corrosion galvanic", "cavitation NPSH", "pump curve", "cold plate ODE"],
+    "fluid_dynamics":   ["Bernoulli equation", "viscosity pressure drop", "cavitation threshold", "Reynolds number"],
+    "thermal_management": ["Carnot limit", "heat flux", "thermal resistance network"],
+    "power_delivery":   ["IR drop", "PDN impedance", "electromigration"]
+  },
+
+  "seed_keywords": [
+    "liquid cooling server leak detection",
+    "cavitation pump AI data center cooling",
+    "corrosion coolant loop server rack",
+    "Bernoulli pressure drop cold plate",
+    "galvanic corrosion copper aluminum coolant",
+    "immersion cooling dielectric fluid",
+    "cold plate thermal resistance GPU",
+    "data center cooling pump failure",
+    "coolant contamination server rack",
+    "two-phase cooling electronics",
+    "direct liquid cooling GPU server",
+    "manifold pressure drop cooling distribution",
+    "micro-channel heat sink clogging",
+    "coolant flow rate optimization AI cluster",
+    "thermal interface material degradation server",
+    "rack-level cooling power density limit",
+    "heat exchanger fouling data center",
+    "CDU cooling distribution unit failure",
+    "rear door heat exchanger efficiency",
+    "facility cooling PUE optimization"
+  ],
+
+  "seed_sources": {
+    "arxiv": 15,
+    "openalex": 20,
+    "google_patents": 10,
+    "job_postings": 8,
+    "opencompute": 15,
+    "github_issues": 8,
+    "huggingface_papers": 3,
+    "nasa_ntrs": 8,
+    "osti_doe": 10
+  },
+
+  "target_companies": [
+    "Vertiv", "Schneider Electric", "LiquidStack", "GRC",
+    "Asetek", "Coolit Systems", "Submer", "Iceotope",
+    "AWS", "Microsoft Azure", "Google Cloud",
+    "Dell", "HPE", "Supermicro"
+  ],
+
+  "intelligence_signals": [
+    "data center liquid cooling engineer",
+    "thermal hydraulics engineer",
+    "cooling infrastructure engineer",
+    "fluid systems reliability engineer",
+    "data center power efficiency engineer",
+    "immersion cooling engineer",
+    "CDU cooling distribution engineer",
+    "thermal management data center engineer"
+  ],
+
+  "opportunity_filters": {
+    "require_software_angle": true,
+    "max_capex_for_solution_usd": 10000000,
+    "target_efficiency_gain_percent": 5,
+    "exclude_domains": ["chip_fabrication", "hbm_design", "robotics_mechanical", "actuators_motors"]
+  },
+
+  "arxiv_categories": ["physics.flu-dyn", "cs.DC", "eess.SY"],
+
+  "week_one_plan": {
+    "day_1": "liquid_cooling",
+    "day_2": "fluid_dynamics",
+    "day_3": "thermal_management",
+    "day_4": "power_delivery",
+    "day_5": "hardware_utilization",
+    "day_6": "cross_domain",
+    "day_7": "kill_round"
+  }
+}

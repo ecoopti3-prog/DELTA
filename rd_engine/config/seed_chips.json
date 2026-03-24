@@ -1,0 +1,95 @@
+{
+  "_profile": "chips",
+  "_description": "AI chips, semiconductors, advanced packaging — NVIDIA/TSMC/AMD/Intel focus",
+
+  "domains": [
+    "thermal_management",
+    "power_delivery",
+    "memory_bandwidth",
+    "data_movement",
+    "packaging",
+    "compute_scheduling",
+    "hardware_utilization",
+    "compute_resource_management"
+  ],
+
+  "physics_constraints": {
+    "thermal_management": ["Carnot limit", "heat flux", "spreading resistance", "junction temperature"],
+    "power_delivery":     ["Landauer limit", "IR drop", "electromigration", "PDN impedance"],
+    "data_movement":      ["roofline model", "memory wall", "bandwidth utilization", "memory latency"],
+    "packaging":          ["signal integrity", "mechanical stress", "interconnect density", "thermal resistance"]
+  },
+
+  "seed_keywords": [
+    "thermal resistance heat spreader chip",
+    "junction temperature throttling GPU",
+    "heat flux advanced packaging 3D IC",
+    "Carnot efficiency thermal management electronics",
+    "PDN impedance voltage droop AI chip",
+    "IR drop power integrity chiplet",
+    "electromigration power delivery network",
+    "Landauer energy computation limit",
+    "memory wall transformer inference",
+    "roofline model memory bandwidth bound",
+    "HBM latency bandwidth utilization",
+    "data movement energy accelerator",
+    "near-memory computing bandwidth",
+    "signal integrity advanced packaging",
+    "chiplet interconnect density packaging",
+    "GPU kernel scheduling utilization",
+    "compute load balancing cluster",
+    "hardware utilization inference serving",
+    "distributed training communication overhead",
+    "compute resource allocation efficiency"
+  ],
+
+  "seed_sources": {
+    "arxiv": 25,
+    "openalex": 20,
+    "google_patents": 10,
+    "job_postings": 8,
+    "opencompute": 10,
+    "github_issues": 15,
+    "huggingface_papers": 10,
+    "nasa_ntrs": 5,
+    "osti_doe": 5
+  },
+
+  "target_companies": [
+    "NVIDIA", "TSMC", "AMD", "Intel",
+    "Google", "Microsoft", "Meta", "Amazon",
+    "Samsung", "Micron", "Marvell", "Broadcom"
+  ],
+
+  "intelligence_signals": [
+    "thermal packaging engineer",
+    "power integrity engineer",
+    "PDN engineer",
+    "advanced packaging engineer",
+    "GPU utilization optimization engineer",
+    "distributed systems performance engineer",
+    "compute scheduling engineer",
+    "data center power efficiency engineer",
+    "chiplet integration engineer",
+    "3D IC thermal engineer"
+  ],
+
+  "opportunity_filters": {
+    "require_software_angle": true,
+    "max_capex_for_solution_usd": 5000000,
+    "target_efficiency_gain_percent": 5,
+    "exclude_domains": ["chip_fabrication", "hbm_design", "photonics_hardware"]
+  },
+
+  "arxiv_categories": ["cs.AR", "cs.DC", "cs.ET", "cs.PF", "eess.SP"],
+
+  "week_one_plan": {
+    "day_1": "hardware_utilization",
+    "day_2": "data_movement",
+    "day_3": "power_delivery",
+    "day_4": "thermal_management",
+    "day_5": "packaging",
+    "day_6": "cross_domain",
+    "day_7": "kill_round"
+  }
+}
